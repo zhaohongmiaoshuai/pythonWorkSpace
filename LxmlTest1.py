@@ -9,5 +9,7 @@ headers = {
 url = 'http://www.qiushibaike.com/text/'
 res = requests.get(url, headers = headers)
 selector = etree.HTML(res.text)
-id = selector.xpath('//*[@id="qiushi_tag_122086803"]/div[1]/a[2]/h2/text()')[0]
-print(id)
+url_infos = selector.xpath('//*[@id="content-left"]/div')
+for url_info in url_infos:
+    id = url_info.xpath('div[1]/a[2]/h2/text()')[0]
+    print(id)
