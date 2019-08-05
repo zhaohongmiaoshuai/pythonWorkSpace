@@ -9,7 +9,7 @@ headers = {
 url = 'http://www.qiushibaike.com/text/'
 res = requests.get(url, headers = headers)
 selector = etree.HTML(res.text)
-url_infos = selector.xpath('//*[@id="content-left"]/div')
+url_infos = selector.xpath('//div[starts-with(@class,"article block untagged mb15 typs")]')
 for url_info in url_infos:
     id = url_info.xpath('div[1]/a[2]/h2/text()')[0]
     print(id)
