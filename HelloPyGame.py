@@ -10,6 +10,7 @@ background2 = pygame.image.load('..\\1.png').convert()
 plane = pygame.image.load('plane.png').convert_alpha()
 background = background1
 i = 1
+pygame.mouse.set_visible(False)
 while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
